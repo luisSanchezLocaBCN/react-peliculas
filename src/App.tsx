@@ -10,8 +10,8 @@ import EjemploReloj from './EjemploReloj';
 // import ContenidoDinamico from './ContenidoDinamico';
 // import FormularioTexto  from './FormularioTexto';
 import EjemploUseEffect from './EjemploUseEffect';
-
-
+import ValorContext from './ValorContex';
+import Abuelo from './Abuelo';
 
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
       {/*Podemos darle un valor por defecto en el componente de Mostrar texto para no rellenar el string*/}
       {/* <MostrarTexto texto={textoUsuario}/> */}
 
-      <MostrarTexto />
+      {/* <MostrarTexto /> */}
       
       {/*____CONTENIDO DINAMICO____*/ }
       {/* <ContenidoDinamico mostrarMensajeSecreto={true}/>
@@ -91,6 +91,19 @@ function App() {
       </div>
       {checked ?< EjemploUseEffect/>: null}
       
+        {/*VALOR CONTEXT */}
+        <ValorContext.Provider value={textoUsuario}>
+          <Abuelo />
+        </ValorContext.Provider>
+
+        <div>
+        {textoUsuario}
+        </div>
+
+
+
+
+
     </>
 
     
