@@ -25,6 +25,10 @@ export default function EjemploUseEffect(){
             return() => clearInterval(intervalId);
         })
 
+        useEffect(()=>{
+            console.log('Voy a ejecutarme una vez')
+
+        },[])
         return(
             <>
             
@@ -32,4 +36,5 @@ export default function EjemploUseEffect(){
                  Me has clickeado{clicks}</button>
                  </>
         )
+        
 }
