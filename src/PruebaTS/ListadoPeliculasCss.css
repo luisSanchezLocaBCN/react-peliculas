@@ -1,0 +1,7 @@
+.listado_peliculas_1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 5px;
+}
