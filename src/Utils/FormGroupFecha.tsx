@@ -1,0 +1,29 @@
+import { useFormikContext } from "formik";
+
+export default function FormGroupFecha(props: FormGroupFechaProps){
+    const{values, validateForm, touched, errors}= useFormikContext<any>();
+    return(
+        <>
+        <div className="form-group">
+            <label htmlFor={props.campo}>{props.label}</label>
+            <input
+                id={props.campo}
+                name={props.campo}
+                defaultValue={values[props.campo]?.toLocateDateString('en-CA')}
+                onChange={e => {
+                    const fecha = new Date(e.currentTarget.value + 'T00:00:00');
+                    values [props.campo]=fecha;
+                    validateForm();
+                }}
+            />
+            {/* {touched[props.campo] && errors[props.campo]? <MostrarErrorCampo></MostrarErrorCampo>
+            } */}
+        </div>
+        </>
+    )
+}
+
+interface FormGroupFechaProps{
+    campo: string;
+    label: string;
+}
